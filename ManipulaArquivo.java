@@ -25,7 +25,7 @@ public class ManipulaArquivo
     public void concatenaNomes() throws IOException
     {
         //preparando arquivo de destino para 'escrever'
-        File concatenados = new File("C:/Users/Marcos/Desktop/concatenados.txt");
+        File concatenados = new File("concatenados.txt");
         concatenados.createNewFile();
         FileWriter fileWriter = new FileWriter(concatenados,true);
         BufferedWriter bufferConcatenados = new BufferedWriter(fileWriter);
