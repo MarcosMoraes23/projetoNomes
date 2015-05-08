@@ -1,15 +1,17 @@
 package dao;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Matheus
- */
-public class NomeDAO {
+public class NomeDAO 
+{
+        private static NomeDAO nomeDAO;
+    
+    public static NomeDAO getInstance()
+    {
+        if (nomeDAO == null)
+        {
+            nomeDAO = new NomeDAO();
+        }
+        return nomeDAO;
+    }
+       
     
 }
