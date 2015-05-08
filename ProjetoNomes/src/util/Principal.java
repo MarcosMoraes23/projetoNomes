@@ -5,7 +5,8 @@
  */
 package util;
 
-import model.Nome;
+import model.ManipulaArquivo;
+
 
 /**
  *
@@ -16,14 +17,7 @@ public class Principal
     public static void main (String args [])
     {
         
-        Nome nome = new Nome();
-        
-        
-        nome.criaArquivosTXT("algum arquivo", "sobrenome asdinaosidcjasudncaid");
-        
-        
-        
-        
+        ManipulaArquivo.getInstance().buscaArquivoNome("nomes");
         
     }
    
