@@ -18,6 +18,7 @@ public class Principal
     {
         
         ManipulaArquivo.getInstance().buscaArquivoNome("nomes");
+        ManipulaArquivo.getInstance().buscaArquivoNome("sobrenomes");
         
     }
    

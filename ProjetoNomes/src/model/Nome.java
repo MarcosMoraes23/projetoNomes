@@ -39,43 +39,11 @@ public class Nome {
 
     
     
-    public boolean criaArquivosTXT (String nome, String sobrenome)
-    {
+    
+    
+    
+    
 
-        try {
-            File arquivo = new File (nome+".txt");
-            arquivo.createNewFile();
-            
-            arquivo = new File (sobrenome+".txt");
-            arquivo.createNewFile();
-           
-            return true;
-            
-        } catch (IOException ex) {
-            System.err.println(ex);
-            return false;
-        } 
-    }
-    
-    
-    
-//    public boolean inserirNomeTXT (String nome)
-//    {
-//        if (nome == null)
-//        {
-//            return false;
-//        }
-//        
-//        
-//        try
-//        {
-//            arquivo.createNewFile();
-//            
-//            
-//        }
-//        
-//        
-//    }
     
     
     
