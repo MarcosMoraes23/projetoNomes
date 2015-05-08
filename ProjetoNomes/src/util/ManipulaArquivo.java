@@ -22,38 +22,50 @@ public class ManipulaArquivo
     }
         
   
-    public void concatenaNomes() throws IOException
+public void concatenaArquivos(String arquivo1, String arquivo2,String extensao)
+            
     {
+        try
+        {
         //preparando arquivo de destino para 'escrever'
-        File concatenados = new File("concatenados.txt");
+        File concatenados = new File("concatenados."+extensao);
         concatenados.createNewFile();
         FileWriter fileWriter = new FileWriter(concatenados,true);
         BufferedWriter bufferConcatenados = new BufferedWriter(fileWriter);
         
         //lendo arquivo de nomes
-        FileReader lerNomes = new FileReader("nomes.txt");
+        FileReader lerNomes = new FileReader(arquivo1);
         BufferedReader bufferNomes = new BufferedReader(lerNomes);
         String nomes ;
-              
-        //lendo arquivo de sobrenomes
-        FileReader lerSobrenomes = new FileReader("sobrenomes.txt");
-        BufferedReader bufferSobrenomes = new BufferedReader(lerSobrenomes);
-        String sobrenomes;
         
-        
-        
+        String sobrenomes ;
+       
+        //Concatenando cada nome com todos os sobrenomes do arquivo
         while ((nomes = bufferNomes.readLine()) != null)
         {
-           while((sobrenomes = bufferSobrenomes.readLine()) != null)
-           {                
+            //lendo arquivo de sobrenomes
+            FileReader lerSobrenomes = new FileReader(arquivo2);
+            BufferedReader bufferSobrenomes = new BufferedReader(lerSobrenomes);
+            
+          while((sobrenomes = bufferSobrenomes.readLine()) != null)
+           {   
                bufferConcatenados.write(nomes.toUpperCase().concat(" "+sobrenomes.toUpperCase()+"\n"));
            }
-           bufferConcatenados.flush();
+          bufferConcatenados.flush();
         }
         
         bufferNomes.close();
-        bufferSobrenomes.close();
         bufferConcatenados.close();
+        
+        JOptionPane.showMessageDialog(null,"Arquivo gravado na pasta do projeto");
+        
+        }
+        catch (IOException e)
+        {
+            JOptionPane.showMessageDialog(null,"Não foi possível gravar o arquivo. Causa: "+ e.getCause());
+        }
     }
+
+
  
 }
