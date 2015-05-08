@@ -17,8 +17,8 @@ public class Principal
     public static void main (String args [])
     {
         
-        ManipulaArquivo.getInstance().buscaArquivoNome("nomes");
-        ManipulaArquivo.getInstance().buscaArquivoNome("sobrenomes");
+        System.out.println(ManipulaArquivo.getInstance().lerNomes());
+        
         
     }
    
